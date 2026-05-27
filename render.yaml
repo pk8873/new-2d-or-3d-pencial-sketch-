@@ -1,0 +1,18 @@
+services:
+  - type: web
+    name: toonify-studio
+    runtime: static
+    buildCommand: npm install -g bun && bun install && bun run build
+    staticPublishPath: ./dist/client
+    pullRequestPreviewsEnabled: true
+    headers:
+      - path: /*
+        name: Cross-Origin-Opener-Policy
+        value: same-origin
+      - path: /*
+        name: Cross-Origin-Embedder-Policy
+        value: require-corp
+    routes:
+      - type: rewrite
+        source: /*
+        destination: /index.html
