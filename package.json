@@ -3,14 +3,17 @@
   "private": true,
   "sideEffects": false,
   "type": "module",
+
   "scripts": {
     "dev": "vite dev",
     "build": "vite build",
     "build:dev": "vite build --mode development",
     "preview": "vite preview",
+    "start": "vite preview --host 0.0.0.0 --port $PORT",
     "lint": "eslint .",
     "format": "prettier --write ."
   },
+
   "dependencies": {
     "@cloudflare/vite-plugin": "^1.25.5",
     "@ffmpeg/ffmpeg": "^0.12.15",
@@ -68,6 +71,7 @@
     "vite-tsconfig-paths": "^6.0.2",
     "zod": "^3.24.2"
   },
+
   "devDependencies": {
     "@eslint/js": "^9.32.0",
     "@lovable.dev/vite-tanstack-config": "^1.7.0",
